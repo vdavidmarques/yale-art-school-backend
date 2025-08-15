@@ -42,7 +42,7 @@ Route::get('/{any}', function () {
 })->where('any', '^(?!admin|login|register|dashboard).*$');//Ela impede que URLs que comecem com /admin, /login, /register, etc, caiam no React.
 
 //Rotas públicas
-Route::get('/publicacoes', [PublicPublicationController::class, 'index'])->name('site.publications.index');
-Route::get('/publicacoes/{publication}', [PublicPublicationController::class, 'show'])->name('site.publications.show');
+Route::get('api/publicacoes', [PublicPublicationController::class, 'index'])->name('site.publications.index');
+Route::get('api/publicacoes/{publication}', [PublicPublicationController::class, 'show'])->name('site.publications.show');
 
 require __DIR__.'/auth.php';

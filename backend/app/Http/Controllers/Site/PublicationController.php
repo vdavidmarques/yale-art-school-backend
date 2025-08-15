@@ -9,12 +9,15 @@ class PublicationController extends Controller
 {
     public function index()
     {
-        $publications = Publication::latest()->get();
-        return view('site.publications.index', compact('publications'));
+        $publications = Publication::latest()->paginate(10);
+
+        return response()->json($publications);
     }
 
-    public function show(Publication $publication)
+    public function show($id)
     {
-        return view('site.publications.show', compact('publication'));
+        $publication = Publication::findOrFail($id);
+
+        return response()->json($publication);
     }
 }

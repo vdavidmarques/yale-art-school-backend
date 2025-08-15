@@ -14,7 +14,7 @@
         <div>
             <label for="body" class="block font-medium">Conteúdo:</label>
             <input id="body" type="hidden" name="body" value="{{ old('body', $publication->body ?? '') }}" required>
-            <trix-editor input="body" class="bg-white h-[12.5rem]"></trix-editor>
+            <trix-editor input="body" class="bg-white h-96"></trix-editor>
         </div>
 
         <div>
@@ -22,6 +22,6 @@
             <input type="file" name="image" id="image" class="w-full border rounded px-3 py-2" required>
         </div>
 
-        <button class="bg-green-600 text-white px-4 py-2 rounded">Salvar</button>
+        <button class="bg-green-600 text-white px-4 py-2 rounded cursor-pointer">Salvar</button>
     </form>
 @endsection
